@@ -26,6 +26,11 @@ namespace DempGrpc.Services
         {
             return _countryRepository.GetByIdAsync(countryId);
         }
+        
+        public Task<Country> GetByNameAsync(String countryName)
+        {
+            return _countryRepository.GetByNameAsync(countryName);
+        }
 
         public async Task<Country> AddAsync(Country country)
         {

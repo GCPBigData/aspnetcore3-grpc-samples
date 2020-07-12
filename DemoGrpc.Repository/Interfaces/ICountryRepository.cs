@@ -1,4 +1,5 @@
-﻿using DemoGrpc.Domain.Entities;
+﻿using System;
+using DemoGrpc.Domain.Entities;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -8,8 +9,9 @@ namespace DemoGrpc.Repository.Interfaces
     {
         Task<List<Country>> GetAsync();
         Task<Country> GetByIdAsync(int countryId);
+        Task<Country> GetByNameAsync(String countryName);
         Task<Country> AddAsync(Country country);
         Task<int> UpdateAsync(Country country);
-        Task<int> DeleteAsync(int countryId);
+        Task<int> DeleteAsync(int countryId);    
     }
 }

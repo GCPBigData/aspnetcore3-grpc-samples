@@ -27,6 +27,11 @@ namespace DemoGrpc.Repository
             return await _dbContext.Country.AsNoTracking().FirstOrDefaultAsync(x => x.CountryId == countryId);
         }
 
+        public async Task<Country> GetByNameAsync(String countryName)
+        {
+            return await _dbContext.Country.AsNoTracking().FirstOrDefaultAsync(x => x.CountryName == countryName);
+        }
+
         public async Task<Country> AddAsync(Country country)
         {
             _dbContext.Add(country);

@@ -1,6 +1,5 @@
 ﻿using Calzolari.Grpc.Net.Client.Validation;
 using DemoGrpc.Domain.Entities;
-using DemoGrpc.Protobufs;
 using Grpc.Core;
 using Microsoft.Extensions.DependencyInjection;
 using Polly;
@@ -8,8 +7,6 @@ using System;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Grpc.Net.Client.Web;
-using Grpc.Net.Client;
 using System.Net;
 using DemoGrpc.Protobufs.V1;
 using Microsoft.Extensions.Logging;
