@@ -8,7 +8,6 @@ using DemoGrpc.Web.Services;
 using DemoGrpc.Web.Validator;
 using DempGrpc.Services;
 using DempGrpc.Services.Interfaces;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -16,15 +15,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
-using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text.Json;
 using CountryGrpcServiceV1 = DemoGrpc.Web.Services.V1.CountryGrpcService;
-using System.Linq;
 using System.Net;
 
 namespace DemoAspNetCore3
@@ -78,7 +70,20 @@ namespace DemoAspNetCore3
                         CountryId = 3,
                         CountryName = "Australia",
                         Description = "Wallabies country"
-                    });
+                    },
+                    new DemoGrpc.Domain.Entities.Country
+                    {
+                        CountryId = 4,
+                        CountryName = "Brazil",
+                        Description = "Fortaleza country"
+                    },
+                    new DemoGrpc.Domain.Entities.Country
+                    {
+                        CountryId = 5,
+                        CountryName = "Chile",
+                        Description = "Santiago country"
+                    }
+                    );
 
                 context.SaveChanges();
             }
